@@ -7,7 +7,7 @@ async function compileExpr() {
   }
 
   try {
-    const res = await fetch("https://minicomp.onrender.com/compile", {
+    const res = await fetch("https://minicom-68of.onrender.com/compile", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
