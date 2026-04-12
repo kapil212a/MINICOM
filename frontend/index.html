@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MiniComp — x86 Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>MiniComp — Expression to x86 Assembly</h1>
+
+<div class="input-box">
+  <input id="expr" placeholder="Enter expression e.g. a + b * 2 - c">
+  <button onclick="compileExpr()">Compile</button>
+  <button onclick="resetAll()">Reset</button>
+</div>
+
+<div class="panels">
+  <div class="panel">
+    <h3>Tokens</h3>
+    <pre id="tokens"></pre>
+  </div>
+
+  <div class="panel">
+    <h3>TAC</h3>
+    <pre id="tac"></pre>
+  </div>
+
+  <div class="panel">
+    <h3>Assembly</h3>
+    <pre id="asm"></pre>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
