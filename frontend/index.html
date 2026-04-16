@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MiniComp Compiler</title>
+  <title>MiniComp Lexer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -9,7 +9,7 @@
 <h1>MiniComp — Lexical Analyzer</h1>
 
 <input id="expr" placeholder="Enter expression e.g. a + b * 2">
-<button onclick="compileExpr()">Compile</button>
+<button onclick="compileExpr()">Analyze</button>
 <button onclick="resetAll()">Reset</button>
 
 <div class="panels">
@@ -17,16 +17,6 @@
     <h3>Tokens</h3>
     <h4 id="count"></h4>
     <pre id="tokens"></pre>
-  </div>
-
-  <div class="panel">
-    <h3>TAC</h3>
-    <pre id="tac"></pre>
-  </div>
-
-  <div class="panel">
-    <h3>Assembly</h3>
-    <pre id="asm"></pre>
   </div>
 </div>
 

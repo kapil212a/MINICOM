@@ -32,3 +32,9 @@ async function compileExpr() {
     alert("Backend not working");
   }
 }
+
+function resetAll() {
+  document.getElementById("expr").value = "";
+  document.getElementById("tokens").innerText = "";
+  document.getElementById("count").innerText = "";
+}
