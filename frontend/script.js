@@ -7,7 +7,7 @@ async function compileExpr() {
   }
 
   try {
-    const res = await fetch("https://minicom-68of.onrender.com/compile", {
+    const res = await fetch("https://minicom-68of.onrender.com/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,9 +22,8 @@ async function compileExpr() {
       return;
     }
 
-    document.getElementById("tokens").innerText = data.tokens.join("\n");
-    document.getElementById("tac").innerText = data.tac.join("\n");
-    document.getElementById("asm").innerText = data.asm.join("\n");
+    document.getElementById("tokens").innerText =
+      data.tokens.join("\n");
 
     document.getElementById("count").innerText =
       "Token Count: " + data.tokenCount;
@@ -32,12 +31,4 @@ async function compileExpr() {
   } catch (err) {
     alert("Backend not working");
   }
-}
-
-function resetAll() {
-  document.getElementById("expr").value = "";
-  document.getElementById("tokens").innerText = "";
-  document.getElementById("tac").innerText = "";
-  document.getElementById("asm").innerText = "";
-  document.getElementById("count").innerText = "";
 }
