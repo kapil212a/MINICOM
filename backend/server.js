@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.send("Backend is running ✅");
 });
 
-// ✅ Lexical Analyzer
+// ✅ LEXER
 function lexer(input) {
   let tokens = [];
   let i = 0;
@@ -60,6 +60,36 @@ function lexer(input) {
   return tokens;
 }
 
+// ✅ SIMPLE DYNAMIC TAC (for: a + b * 2 type)
+function generateTAC(expr) {
+  let parts = expr.split(" ");
+
+  if (parts.length === 5) {
+    // Example: a + b * 2
+    let t1 = `t1 = ${parts[2]} * ${parts[4]}`;
+    let t2 = `t2 = ${parts[0]} ${parts[1]} t1`;
+    return [t1, t2];
+  }
+
+  return ["Invalid expression format"];
+}
+
+// ✅ SIMPLE DYNAMIC ASM
+function generateASM(expr) {
+  let parts = expr.split(" ");
+
+  if (parts.length === 5) {
+    return [
+      `MOV EAX, [${parts[2]}]`,
+      `IMUL EAX, ${parts[4]}`,
+      `ADD EAX, [${parts[0]}]`,
+      `MOV [result], EAX`
+    ];
+  }
+
+  return ["Invalid expression format"];
+}
+
 // ✅ API
 app.post("/compile", (req, res) => {
   const expr = req.body.expr;
@@ -69,20 +99,8 @@ app.post("/compile", (req, res) => {
   }
 
   const tokens = lexer(expr);
-
-  const tac = [
-    "t1 = b * 2",
-    "t2 = a + t1",
-    "t3 = t2 - c"
-  ];
-
-  const asm = [
-    "MOV EAX, [b]",
-    "IMUL EAX, 2",
-    "ADD EAX, [a]",
-    "SUB EAX, [c]",
-    "MOV [result], EAX"
-  ];
+  const tac = generateTAC(expr);
+  const asm = generateASM(expr);
 
   res.json({
     tokens,
@@ -92,6 +110,7 @@ app.post("/compile", (req, res) => {
   });
 });
 
+// ✅ PORT FIX
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
