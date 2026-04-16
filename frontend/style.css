@@ -1,31 +1,45 @@
 body {
   background: #0f172a;
   color: white;
-  text-align: center;
   font-family: Arial;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
 }
 
 input {
-  width: 60%;
+  width: 90%;
   padding: 10px;
+  margin-top: 10px;
 }
 
 button {
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 15px;
+  margin: 10px 5px;
   background: green;
   color: white;
   border: none;
-}
-
-.panels {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  cursor: pointer;
 }
 
 .panel {
-  flex: 1;
-  background: #1e293b;
+  margin-top: 20px;
+  text-align: left;
+}
+
+pre {
+  background: black;
   padding: 10px;
 }

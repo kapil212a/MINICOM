@@ -6,13 +6,16 @@
 </head>
 <body>
 
-<h1>MiniComp — Lexical Analyzer</h1>
+<div class="container">
+  <h1>MiniComp — Lexical Analyzer</h1>
 
-<input id="expr" placeholder="Enter expression e.g. a + b * 2">
-<button onclick="compileExpr()">Analyze</button>
-<button onclick="resetAll()">Reset</button>
+  <input id="expr" placeholder="Enter expression e.g. a + b * 2">
+  
+  <div>
+    <button onclick="compileExpr()">Analyze</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
 
-<div class="panels">
   <div class="panel">
     <h3>Tokens</h3>
     <h4 id="count"></h4>
