@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>MiniComp — x86 Generator</title>
+  <title>MiniComp Compiler</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>MiniComp — Expression to x86 Assembly</h1>
+<h1>MiniComp — Lexical Analyzer</h1>
 
-<div class="input-box">
-  <input id="expr" placeholder="Enter expression e.g. a + b * 2 - c">
-  <button onclick="compileExpr()">Compile</button>
-  <button onclick="resetAll()">Reset</button>
-</div>
+<input id="expr" placeholder="Enter expression e.g. a + b * 2">
+<button onclick="compileExpr()">Compile</button>
+<button onclick="resetAll()">Reset</button>
 
 <div class="panels">
   <div class="panel">
     <h3>Tokens</h3>
+    <h4 id="count"></h4>
     <pre id="tokens"></pre>
   </div>
 
