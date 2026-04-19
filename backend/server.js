@@ -5,12 +5,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Test route
+// Test route
 app.get("/", (req, res) => {
   res.send("Lexical Analyzer Backend Running ✅");
 });
 
-// ✅ LEXICAL ANALYZER
+//  LEXICAL ANALYZER
 function lexer(input) {
   let tokens = [];
   let i = 0;
@@ -61,7 +61,7 @@ function lexer(input) {
   return tokens;
 }
 
-// ✅ API
+//  API
 app.post("/analyze", (req, res) => {
   const expr = req.body.expr;
 
@@ -77,7 +77,7 @@ app.post("/analyze", (req, res) => {
   });
 });
 
-// ✅ PORT
+//  PORT
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
